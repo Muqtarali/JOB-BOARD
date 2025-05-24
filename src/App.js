@@ -1,45 +1,40 @@
-
-import './App.css';
-import React, { Children } from 'react'
+// App.jsx
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
- import {
-   HomeLayout,
- Register,
+import {
+  HomeLayout,
+  Landing,
+  Register,
   Login,
-  DashboardLayout,
-  Landing
-}
-  from './component';
 
 
-  const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <HomeLayout />,
-    children: [
+} from './pages';
+
+const router = createBrowserRouter([
       {
-        index: true,
-       
+        path: '/',
+        element: <HomeLayout />,
+
+      },
+      {
+      path: 'landing',
         element: <Landing />,
       },
-    ],
-  },
-  {
-    path: 'dashboard',
-    element: <DashboardLayout />,
-  },
-  {
-    path: 'Login',
-    element: <Login />,
-  },
-  {
-    path: 'Register',
-    element: <Register />,
-  },
-]);
+      {
+        path: 'register',
+        element: <Register />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+     
+   
+  
+]); 
 
 
 const App = () => {
   return <RouterProvider router={router} />;
- };
- export default App;
+};
+
+export default App;

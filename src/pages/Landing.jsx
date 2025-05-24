@@ -1,8 +1,10 @@
 import React from 'react';
-import main from '../assets/images/main.svg';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.svg';
 import styled from 'styled-components';
+
+import main from '../assets/images/main.svg';
+import logo from '../assets/images/logo.svg';
+import Logo from '../components/Logo';
 
 const StyledWrapper = styled.section`
   nav {
@@ -21,10 +23,10 @@ const StyledWrapper = styled.section`
   }
   h1 {
     font-weight: 700;
+    margin-bottom: 1.5rem;
     span {
       color: var(--primary-500);
     }
-    margin-bottom: 1.5rem;
   }
   p {
     line-height: 2;
@@ -49,37 +51,36 @@ const StyledWrapper = styled.section`
     .main-img {
       display: block;
     }
-  } 
+  }
 `;
 
 const Landing = () => {
   return (
     <StyledWrapper>
       <nav>
-        <img src={logo} alt="jobify" className="logo" />
+        <Logo />
       </nav>
-      <div className="container page">
-        {/* info */}
-        <div className="info">
+      <div className='container page'>
+        {/* Info Section */}
+        <div className='info'>
           <h1>
-            job <span>tracking</span> app
+            Job <span>Tracking</span> App
           </h1>
           <p>
-            I'm baby wayfarers hoodie next level taiyaki brooklyn cliche blue
+            I'm baby wayfarers hoodie next-level taiyaki brooklyn cliche blue
             bottle single-origin coffee chia. Aesthetic post-ironic venmo,
             quinoa lo-fi tote bag adaptogen everyday carry meggings +1 brunch
             narwhal.
           </p>
-          <Link to="/register" className="btn register-link">
+          <Link to='/register' className='btn register-link'>
             Register
           </Link>
-          <Link to="/login" className="btn">
+          <Link to='/login' className='btn'>
             Login / Demo User
           </Link>
         </div>
-        <img src={main} alt="job hunt" className="img main-img" />
-      </div>      
-      
+        <img src={main} alt='Illustration of job tracking' className='img main-img' />
+      </div>
     </StyledWrapper>
   );
 };
