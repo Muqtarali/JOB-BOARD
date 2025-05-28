@@ -5,6 +5,9 @@ import {
   Landing,
   Register,
   Login,
+  Error,
+  DeshBoardLayout,
+ 
 
 
 } from './pages';
@@ -13,6 +16,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <HomeLayout />,
+        errorElement: <Error />, 
 
       },
       {
@@ -27,6 +31,11 @@ const router = createBrowserRouter([
         path: 'login',
         element: <Login />,
       },
+      {
+        path: 'DeshBoardLayout',
+        element: <DeshBoardLayout />
+      },
+      
      
    
   
