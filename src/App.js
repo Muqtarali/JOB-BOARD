@@ -1,28 +1,37 @@
 // App.jsx
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import {
   HomeLayout,
   Landing,
   Register,
   Login,
   Error,
-  DeshBoardLayout,
+  DashboardLayout,
+  AddJob,
+ 
  
 
 
 } from './pages';
+
 
 const router = createBrowserRouter([
       {
         path: '/',
         element: <HomeLayout />,
         errorElement: <Error />, 
+        children: [
+            {
+              index: true,
+              // path: 'landing',
+                element: <Landing />,
+              },
+              
+    ],
 
       },
-      {
-      path: 'landing',
-        element: <Landing />,
-      },
+      
       {
         path: 'register',
         element: <Register />,
@@ -31,11 +40,30 @@ const router = createBrowserRouter([
         path: 'login',
         element: <Login />,
       },
-      {
-        path: 'DeshBoardLayout',
-        element: <DeshBoardLayout />
+     {
+        path: 'dashboard',
+        element: <DashboardLayout />,
+        children: [
+          {
+            index: true,
+            element: <AddJob />,
+          },
+          // { path: 'stats', element: <Stats /> },
+          // {
+          //   path: 'all-jobs',
+          //   element: <AllJobs />,
+          // },
+
+          // {
+          //   path: 'profile',
+          //   element: <Profile />,
+          // },
+          // {
+          //   path: 'admin',
+          //   element: <Admin />,
+          // },
+        ],
       },
-      
      
    
   
